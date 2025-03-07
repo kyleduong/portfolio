@@ -269,20 +269,30 @@
         .experience-details {
             flex-grow: 1;
         }
+
+        .experience-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.25rem; /* Adjust as needed */
+        }
         
         .experience-header {
             display: flex;
             justify-content: space-between;
             margin-bottom: 0.25rem;
         }
+
         
         .company-name {
             font-weight: 600;
         }
         
         .experience-location {
-            color: var(--secondary-color);
+            font: black;
+            font-weight: 500;
+            /*color: var(--secondary-color);*/
             font-size: 0.9rem;
+            
         }
         
         .job-title {
@@ -407,12 +417,17 @@
                 <span>T</span>
             </div>
             <div class="experience-details">
-                <div class="experience-header">
+                <div class="experience-row">
+                <!--<div class="experience-header">-->
                     <div class="company-name">GBCS Inc</div>
                     <div class="experience-location">Remote</div>
+                <!--</div>-->
                 </div>
-                <div class="job-title">Backend Engineer Intern</div>
-                <div class="job-period">Mar 2025 - Present</div>
+
+                <div class="experience-row">
+                    <div class="job-title">Backend Engineer Intern</div>
+                    <div class="job-period">Mar 2025 - Present</div>
+                </div>
             </div>
         </div>
         
@@ -422,12 +437,17 @@
                 <span>🦋</span>
             </div>
             <div class="experience-details">
-                <div class="experience-header">
+                <div class="experience-row">
+                <!--<div class="experience-header">-->
                     <div class="company-name">Google</div>
                     <div class="experience-location">Remote</div>
+                <!--</div>-->
                 </div>
-                <div class="job-title">Software Engineer Program Mentorship</div>
-                <div class="job-period">Mar 2025 - Present</div>
+
+                <div class="experience-row">
+                    <div class="job-title">Software Engineer Program Mentorship</div>
+                    <div class="job-period">Mar 2025 - Present</div>
+                </div>
             </div>
         </div>
         
@@ -437,12 +457,17 @@
                 <span>G</span>
             </div>
             <div class="experience-details">
-                <div class="experience-header">
-                    <div class="company-name">Google</div>
-                    <div class="experience-location">Cambridge, MA</div>
+                <div class="experience-row">
+                    <!--<div class="experience-header">-->
+                        <div class="company-name">Encryptiest</div>
+                        <div class="experience-location">Pasadena, CA</div>
+                    <!--</div>-->
                 </div>
-                <div class="job-title">Software Engineering Intern</div>
-                <div class="job-period">May 2024 - Aug 2024</div>
+
+                <div class="experience-row">
+                    <div class="job-title">Software Engineering Intern</div>
+                    <div class="job-period">May 2024 - Aug 2024</div>
+                </div>
             </div>
         </div>
     </div>
