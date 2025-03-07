@@ -79,6 +79,13 @@
             margin: 0 4px;
         }
         
+        .icon img{
+            border-radius: 10px;
+            width: 1.5em;
+            height: auto;
+            object-fit: middle;
+            
+        }
         
         .school-logo {
             width: 24px;
@@ -280,6 +287,10 @@
             text-align: right;
             font-size: 0.9rem;
         }
+
+        .darker-text {
+            color: black;
+        }
         
         /* Responsive adjustments */
         @media (max-width: 768px) {
@@ -303,17 +314,21 @@
         <div class="header">
             <p>
                 hi, i'm 
-                <span class="icon"></span>
-                <span>kyle duong</span>, i'm a
+                <span class="icon">
+                    <img src = "headshot cropped slightly shrinked shifted.jpg" alt = "kyle_duong headshot" />
+                </span>
+                <span class = "darker-text">kyle duong</span>.
             </p>
             <p>
-                computer science
+                i'm a <span class = "darker-text">computer science</span>
                 <span class="icon">👨‍💻</span>
                 student at the
             </p>
             <p>
-                <span class="icon school-logo">SC</span>
-                University of California, San Diego
+                <span class="icon">
+                    <img src = "ucsd logo.png" alt = "kyle_duong headshot" />
+                </span>
+                <span class = "darker-text">University of California, San Diego</span>
             </p>
             
             <!-- Social links -->
