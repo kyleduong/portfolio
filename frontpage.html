@@ -71,6 +71,7 @@
             color: var(--secondary-color);
             font-weight: 400;
             font-size: 30px;
+            margin: 0.2rem 0;  /* Adjust this value as needed */
         }
         
         .icon {
@@ -84,7 +85,8 @@
             width: 1.5em;
             height: auto;
             object-fit: middle;
-            
+            position: relative;
+            top: 5px;  /* Adjust this value to move the image down */
         }
         
         .school-logo {
@@ -158,10 +160,14 @@
         }
         
         .project-card:hover {
-            transform: translateY(-5px);
+            transform: scale(1.02);
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
         }
         
+        .experience-item:hover {
+            transform: scale(1.02);
+        }
+
         .project-icon {
             width: 50px;
             height: 50px;
@@ -242,6 +248,7 @@
         .experience-item {
             display: flex;
             margin-bottom: 1.5rem;
+            transition: transform 0.2s, box-shadow 0.2s;
         }
         
         .company-logo {
@@ -344,8 +351,8 @@
         
         <!-- Bio section -->
         <div class="bio">
-            <p>coding and entrepreneurship are two passions of mine. been at the grind for a few years now, and looking forward to the next few.</p>
-            <p style="margin-top: 1rem;">currently speeding up the app store deployment process with AI @ <a href="#">storeshot</a></p>
+            <p>i've found my passion in coding and entrepreneurship. in my free time, i like to play Teamfight Tactics and playing various sports.</p>
+            <p style="margin-top: 1rem;">currently doing backend developement for @ <a href="https://www.gbcsgroup.com/">GBCS</a></p>
         </div>
         
         <!-- Projects section -->
@@ -399,11 +406,11 @@
             </div>
             <div class="experience-details">
                 <div class="experience-header">
-                    <div class="company-name">Tripalink (Nest Housing)</div>
+                    <div class="company-name">GBCS Inc</div>
                     <div class="experience-location">Remote</div>
                 </div>
-                <div class="job-title">Backend Engineer</div>
-                <div class="job-period">Oct 2024 - Present</div>
+                <div class="job-title">Backend Engineer Intern</div>
+                <div class="job-period">Mar 2025 - Present</div>
             </div>
         </div>
         
@@ -414,11 +421,11 @@
             </div>
             <div class="experience-details">
                 <div class="experience-header">
-                    <div class="company-name">Butterfly</div>
+                    <div class="company-name">Google</div>
                     <div class="experience-location">Remote</div>
                 </div>
-                <div class="job-title">Software Engineer</div>
-                <div class="job-period">Oct 2024 - Jan 2025</div>
+                <div class="job-title">Software Engineer Program Mentorship</div>
+                <div class="job-period">Mar 2025 - Present</div>
             </div>
         </div>
         
