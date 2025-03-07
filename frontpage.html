@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Base styles and fonts */
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        :root {
+            --primary-color: #333;
+            --secondary-color: #666;
+            --light-gray: #f5f5f5;
+            --accent-teal: #40c4c4;
+            --accent-peach: #f8c6a4;
+            --accent-green: #6ed9a0;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--primary-color);
+            position: relative;
+            background-color: white;
+            overflow-x: hidden;
+        }
+        
+        /* Static background effect */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            opacity: 0.03;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+            z-index: -1;
+        }
+        
+        /* Container */
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        /* Header section */
+        .header {
+            text-align: center;
+            padding: 3rem 0;
+        }
+        
+        .header h1 {
+            font-weight: 600;
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .header p {
+            color: var(--secondary-color);
+            font-weight: 400;
+        }
+        
+        .icon {
+            display: inline-block;
+            vertical-align: middle;
+            margin: 0 4px;
+        }
+        
+        .school-icon {
+            width: 24px;
+            height: 24px;
+            background-color: #5cb85c;
+            border-radius: 4px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 14px;
+        }
+        
+        .school-logo {
+            width: 24px;
+            height: 24px;
+            border-radius: 4px;
+            background-color: #990000;
+            color: white;
+            font-size: 10px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+        
+        /* Social links */
+        .social-links {
+            margin: 1.5rem 0;
+        }
+        
+        .social-links a {
+            display: inline-block;
+            margin: 0 0.5rem;
+            color: var(--primary-color);
+            text-decoration: none;
+            font-size: 1.2rem;
+            transition: opacity 0.2s;
+        }
+        
+        .social-links a:hover {
+            opacity: 0.7;
+        }
+        
+        /* Bio section */
+        .bio {
+            text-align: center;
+            color: var(--secondary-color);
+            margin-bottom: 2rem;
+            font-size: 0.9rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .bio a {
+            color: var(--accent-teal);
+            text-decoration: none;
+        }
+        
+        /* Section headings */
+        .section-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin: 3rem 0 1.5rem 0;
+        }
+        
+        /* Projects section */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .project-card {
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            padding: 1.5rem;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .project-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1rem;
+        }
+        
+        .project-icon.teal {
+            background-color: var(--accent-teal);
+            color: white;
+        }
+        
+        .project-icon.peach {
+            background-color: var(--accent-peach);
+            color: white;
+        }
+        
+        .project-icon.green {
+            background-color: var(--accent-green);
+            color: white;
+        }
+        
+        .project-title {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+        
+        .project-description {
+            color: var(--secondary-color);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+        
+        .project-links {
+            display: flex;
+            gap: 0.5rem;
+        }
+        
+        .project-link {
+            display: block;
+            padding: 0.5rem;
+            text-align: center;
+            border-radius: 6px;
+            text-decoration: none;
+            font-size: 0.9rem;
+            flex: 1;
+            transition: opacity 0.2s;
+        }
+        
+        .project-link:hover {
+            opacity: 0.9;
+        }
+        
+        .project-link.teal {
+            background-color: var(--accent-teal);
+            color: white;
+        }
+        
+        .project-link.peach {
+            background-color: var(--accent-peach);
+            color: white;
+        }
+        
+        .project-link.gray {
+            background-color: #ccc;
+            color: white;
+        }
+        
+        .project-link.green {
+            background-color: var(--accent-green);
+            color: white;
+        }
+        
+        /* Experience section */
+        .experience-item {
+            display: flex;
+            margin-bottom: 1.5rem;
+        }
+        
+        .company-logo {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 1rem;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+            flex-shrink: 0;
+        }
+        
+        .experience-details {
+            flex-grow: 1;
+        }
+        
+        .experience-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.25rem;
+        }
+        
+        .company-name {
+            font-weight: 600;
+        }
+        
+        .experience-location {
+            color: var(--secondary-color);
+            font-size: 0.9rem;
+        }
+        
+        .job-title {
+            color: var(--secondary-color);
+            font-weight: 400;
+            font-size: 0.9rem;
+        }
+        
+        .job-period {
+            color: var(--secondary-color);
+            text-align: right;
+            font-size: 0.9rem;
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .experience-header {
+                flex-direction: column;
+            }
+            
+            .job-period {
+                text-align: left;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header section -->
+        <div class="header">
+            <h1>
+                hi, i'm 
+                <span class="icon">🧑</span>
+                <span>kyle duong</span>, i'm a
+            </h1>
+            <p>
+                computer science
+                <span class="icon school-icon"><i class="fas fa-laptop-code"></i></span>
+                student at the
+            </p>
+            <p>
+                <span class="icon school-logo">SC</span>
+                University of California-San Diego
+            </p>
+            
+            <!-- Social links -->
+            <div class="social-links">
+                <a href="#" aria-label="Link"><i class="fas fa-link"></i></a>
+                <a href="#" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+        
+        <!-- Bio section -->
+        <div class="bio">
+            <p>coding and entrepreneurship are two passions of mine. been at the grind for a few years now, and looking forward to the next few.</p>
+            <p style="margin-top: 1rem;">currently speeding up the app store deployment process with AI @ <a href="#">storeshot</a></p>
+        </div>
+        
+        <!-- Projects section -->
+        <h2 class="section-title">projects</h2>
+        <div class="projects-grid">
+            <!-- Project 1 -->
+            <div class="project-card">
+                <div class="project-icon teal">
+                    <i class="fas fa-mobile-alt"></i>
+                </div>
+                <h3 class="project-title">Storeshot</h3>
+                <p class="project-description">Storeshot speeds up the app store / play store deployment process by generating app store assets with AI.</p>
+                <div class="project-links">
+                    <a href="#" class="project-link teal">Website</a>
+                </div>
+            </div>
+            
+            <!-- Project 2 -->
+            <div class="project-card">
+                <div class="project-icon peach">
+                    <i class="fas fa-book"></i>
+                </div>
+                <h3 class="project-title">Elisha</h3>
+                <p class="project-description">Elisha was originally a Bible reading and Church app. It will now transition to an AI powered Bible exploration app.</p>
+                <div class="project-links">
+                    <a href="#" class="project-link peach">Website</a>
+                    <a href="#" class="project-link gray">GitHub</a>
+                </div>
+            </div>
+            
+            <!-- Project 3 -->
+            <div class="project-card">
+                <div class="project-icon green">
+                    <i class="fas fa-users"></i>
+                </div>
+                <h3 class="project-title">Clubology</h3>
+                <p class="project-description">Clubology is an app for helping school clubs, student orgs, sports teams, and groups manage their club.</p>
+                <div class="project-links">
+                    <a href="#" class="project-link green">Website</a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Work Experience section -->
+        <h2 class="section-title">work experiences</h2>
+        
+        <!-- Experience 1 -->
+        <div class="experience-item">
+            <div class="company-logo">
+                <span>T</span>
+            </div>
+            <div class="experience-details">
+                <div class="experience-header">
+                    <div class="company-name">Tripalink (Nest Housing)</div>
+                    <div class="experience-location">Remote</div>
+                </div>
+                <div class="job-title">Backend Engineer</div>
+                <div class="job-period">Oct 2024 - Present</div>
+            </div>
+        </div>
+        
+        <!-- Experience 2 -->
+        <div class="experience-item">
+            <div class="company-logo">
+                <span>🦋</span>
+            </div>
+            <div class="experience-details">
+                <div class="experience-header">
+                    <div class="company-name">Butterfly</div>
+                    <div class="experience-location">Remote</div>
+                </div>
+                <div class="job-title">Software Engineer</div>
+                <div class="job-period">Oct 2024 - Jan 2025</div>
+            </div>
+        </div>
+        
+        <!-- Experience 3 -->
+        <div class="experience-item">
+            <div class="company-logo">
+                <span>G</span>
+            </div>
+            <div class="experience-details">
+                <div class="experience-header">
+                    <div class="company-name">Google</div>
+                    <div class="experience-location">Cambridge, MA</div>
+                </div>
+                <div class="job-title">Software Engineering Intern</div>
+                <div class="job-period">May 2024 - Aug 2024</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // This script enhances the subtle static effect with some animation
+        document.addEventListener('DOMContentLoaded', function() {
+            const body = document.querySelector('body');
+            
+            // Create and append a canvas for the animated noise
+            const canvas = document.createElement('canvas');
+            const ctx = canvas.getContext('2d');
+            
+            canvas.style.position = 'fixed';
+            canvas.style.top = '0';
+            canvas.style.left = '0';
+            canvas.style.width = '100%';
+            canvas.style.height = '100%';
+            canvas.style.pointerEvents = 'none';
+            canvas.style.opacity = '0.02';
+            canvas.style.zIndex = '-1';
+            
+            body.appendChild(canvas);
+            
+            // Resize canvas to match window size
+            function resizeCanvas() {
+                canvas.width = window.innerWidth;
+                canvas.height = window.innerHeight;
+            }
+            
+            resizeCanvas();
+            window.addEventListener('resize', resizeCanvas);
+            
+            // Create animated noise effect
+            function drawNoise() {
+                const imageData = ctx.createImageData(canvas.width, canvas.height);
+                const data = imageData.data;
+                
+                for (let i = 0; i < data.length; i += 4) {
+                    const value = Math.random() * 255;
+                    data[i] = value;
+                    data[i + 1] = value;
+                    data[i + 2] = value;
+                    data[i + 3] = 255;
+                }
+                
+                ctx.putImageData(imageData, 0, 0);
+                requestAnimationFrame(drawNoise);
+            }
+            
+            drawNoise();
+        });
+    </script>
+</body>
+</html>
