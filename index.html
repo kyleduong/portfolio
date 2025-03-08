@@ -58,6 +58,10 @@
         .header {
             text-align: center;
             padding: 3rem 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
             
         }
         
@@ -70,23 +74,36 @@
         .header p {
             color: var(--secondary-color);
             font-weight: 500;
-            font-size: 35px;
-            margin: 0.2rem 0;  /* Adjust this value as needed */
+            font-size: 30px;
+            line-height: 1; 
+            margin: 0;  /* Adjust this value as needed */
+            padding:0;
+            display: flex; /* THIS IS WHAT FIXED MY SPACING PROBLEMS */
+            align-items: center;
+            justify-content: center;
+            /*padding: 8px 0;*/
         }
+        
+        .header p + p {
+            margin-top: 1rem;
+        }
+        
         
         .icon {
             display: inline-block;
             vertical-align: middle;
-            margin: 0 4px;
+            /*margin: 0 4px;*/
+            
         }
         
         .icon img{
-            border-radius: 10px;
-            width: 1.5em;
+            border-radius: 12px;
+            width: 1.4em;
             height: auto;
-            object-fit: middle;
+            object-fit: contain;
             position: relative;
-            top: 5px;  /* Adjust this value to move the image down */
+            vertical-align: middle;
+            /*top: 5px;   Adjust this value to move the image down */
         }
         
         .school-logo {
@@ -130,7 +147,7 @@
         }
 
         .social-links a.instagram {
-            color: #e1306c; /* Instagram pinkish */
+            color: #e1306c; /* Instagram pinkish */ 
         }
 
         
@@ -144,7 +161,7 @@
             font-family: "Inter";
             color: var(--secondary-color);
             margin-bottom: 2rem;
-            font-size: 0.9rem;
+            font-size: 1rem;
             max-width: 600px;
             margin-left: auto;
             margin-right: auto;
@@ -422,22 +439,22 @@
         <!-- Header section -->
         <div class="header">
             <p>
-                hi, i'm 
+                hi, i'm&nbsp;
                 <span class="icon">
                     <img src = "headshot cropped slightly shrinked shifted.jpg" alt = "kyle_duong headshot" />
                 </span>
-                <span class = "darker-text">kyle duong</span>.
+                <span class = "darker-text">&nbsp;kyle duong</span>.
             </p>
             <p>
-                i'm a <span class = "darker-text">computer science</span>
+                i'm a <span class = "darker-text">&nbsp;computer science&nbsp;</span>
                 <span class="icon">👨‍💻</span>
-                student at the
+                &nbsp;student at the
             </p>
             <p>
                 <span class="icon">
                     <img src = "ucsd logo no checker.png" alt = "kyle_duong headshot" />
                 </span>
-                <span class = "darker-text">University of California, San Diego</span>
+                <span class = "darker-text">&nbsp;University of California, San Diego</span>
             </p>
             
             <!-- Social links -->
