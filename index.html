@@ -369,6 +369,14 @@
             border-radius: 50%; */
         }
 
+        .company-logo img.farmers {
+            width: 75%;          /* Adjust this percentage to control the image size */
+            height: 75%;         /* Keeps the image proportional */
+            object-fit: contain; /* Ensures the entire image is visible */
+            /* Optional: If you want the image itself to be rounded:
+            border-radius: 50%; */
+        }
+
                 
         .experience-details {
             flex-grow: 1;
@@ -536,6 +544,28 @@
         
         <div>
             <!-- Experience 1 -->
+            <a href="https://www.farmers.com/" target="_blank" class="experience-link">
+                <div class="experience-item">
+                    <div class="company-logo">
+                        <img src="farmers logo.png" alt="Company Logo" class="farmers">
+                    </div>
+                    <div class="experience-details">
+                        <div class="experience-row">
+                        <!--<div class="experience-header">-->
+                            <div class="company-name">Farmers Insurance</div>
+                            <div class="experience-location">Woodland Hills, CA</div>
+                        <!--</div>-->
+                        </div>
+
+                        <div class="experience-row">
+                            <div class="job-title">Actuarial Intern</div>
+                            <div class="job-period">Jun 2026 - Aug 2026</div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Experience 2 -->
             <a href="https://www.gbcsgroup.com/" target="_blank" class="experience-link">
                 <div class="experience-item"> 
                     <div class="company-logo">
@@ -645,7 +675,7 @@
             </a>
         
 
-        <h2 class="section-title">current tft rank</h2>
+        <h2 class="section-title">current tft rank (teamfight tactics)</h2>
         <div class="tft-section">
             <img src="tft rank best (4).png" alt="TFT rank" class="tft">
         </div>
